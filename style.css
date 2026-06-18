@@ -1,0 +1,148 @@
+* {
+    padding:0;
+    margin:0;
+    font-family: sans-serif;
+}
+:root {
+    --maincolor: rgb(59, 59, 255);
+    --yellowcolor: #ffd740;
+    --greencolor: #ccffa2;
+}
+body {
+    background-image:linear-gradient(
+270deg, var(--maincolor), var(--yellowcolor));
+}
+.navbar {
+    display:flex;
+    height:60px;
+    margin:auto;
+    text-align: center;
+    background-color:  var(--greencolor);
+}
+.navbar nav{
+    width:50vw;
+    height:60px;
+    margin:auto;
+    padding:10px 0px;
+}
+.navbar nav ul a {
+    text-decoration:none;
+    color: var(--maincolor);
+    font-size: 20px;
+}
+.navbar nav ul {
+    gap:30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 0px;
+}
+.navbar nav ul li{
+    list-style: none;
+    transition: 0.5s ease-in-out;
+}
+.navbar nav ul a:hover {
+    text-shadow: 0px 0px 5px var(--maincolor);
+}
+.hero {
+    position:relative;
+    width: 60vw;
+    height:50vh;
+    display: flex;
+    margin:auto;
+}
+.hero .txt h1 {
+    color: var(--maincolor);
+    padding:  0px 0px 10px;
+}
+.hero .txt {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.hero img {
+    border-radius: 20%;
+    position:absolute;
+    width: 200px;
+    height: 200px;
+    right:0;
+    left:auto;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.5s ease-in-out;
+}
+.hero img:hover {
+    border-radius: 30%;
+    filter:  drop-shadow(0px 0px 9px black);
+}
+.grid {
+    display: grid;
+    grid-template-areas:
+    "a c"
+    "b c";
+    gap:10px;
+    margin:30px;
+}
+.first {
+    grid-area: a;
+    background-color: var(--maincolor);
+    color: #000;
+    animation: wobble 0.5s ease-in-out infinite alternate;
+}
+.second {
+    grid-area: b;
+    background-color: var(--greencolor);
+    color: #000;
+    animation: wobble 0.5s ease-in-out infinite alternate;
+}
+.third {
+    grid-area: c;
+    background-color: rgb(255, 111, 111);
+    color: #000;
+    animation: wobble 0.5s ease-in-out infinite alternate;
+}
+.box {
+    padding:20px;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    border: none;
+    
+}
+@keyframes wobble{
+    0%{
+        transform: rotate(-5deg);
+    }
+    100%{
+        transform: rotate(5deg);
+    }
+}
+@media (max-width: 899px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        width: 90vw;
+        height: auto;
+    }
+    .hero .txt {
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+    }
+    .hero img {
+        position: static;
+        top: auto;
+        right: auto;
+        left: auto;
+        transform: none;
+        width: 200px;
+        height: 200px;
+        margin: 20px auto 0;
+    }
+    .grid {
+        grid-template-areas:
+        "a"
+        "b"
+        "c";
+    }
+}
